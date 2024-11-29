@@ -1,1 +1,124 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.outer-wrapper {
+  padding: 20px;
+  padding-top: 20px;
+  min-height: 100vh;
+  background-color: #EAEDFF;
+  display: flex;
+  flex-direction: column;
+}
+.outer-wrapper .header-index {
+  padding: 20px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #F5F6FF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.outer-wrapper .header-index h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.outer-wrapper .header-index h1 #the {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #ff8181;
+}
+.outer-wrapper .header-index h1 #fantastic {
+  font-family: "Squada One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #A9B3FF;
+  border-bottom: 1px dashed #FF4747;
+}
+.outer-wrapper .header-index h1 #fantasy {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 4rem;
+  transition: transform 0.5s ease;
+  color: #6274FF;
+}
+.outer-wrapper .header-index h1 #fantasy:hover {
+  transform: scale(1.1);
+}
+.outer-wrapper .header-index h1 #feud {
+  font-family: "Squada One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #FF4747;
+}
+.outer-wrapper .header-index .catchphrase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.outer-wrapper .header-index .catchphrase #catchphrase {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #545454;
+}
+.outer-wrapper .wrapper-body {
+  height: 50vh;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  background-color: #F5F6FF;
+  margin: 30px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.outer-wrapper .wrapper-body #ctaBtn {
+  margin-top: 20%;
+  height: 60px;
+  width: 200px;
+  background-color: #7f8eff;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.5s ease;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.outer-wrapper .wrapper-body #ctaBtn:hover {
+  background-color: #6274FF;
+  outline: none;
+  transform: scale(1.2);
+}/*# sourceMappingURL=style.css.map */
