@@ -1,2 +1,121 @@
 @import "variables.scss";
 @import "mixins.scss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.outer-wrapper {
+    padding: 20px;
+    padding-top: 20px;
+    min-height: 100vh;
+    background-color: $coldGray;
+    display:flex;
+    flex-direction: column;
+
+    .header-index{
+        padding: 20px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // border: 1px dashed red;
+        border-radius: 20px;
+        background-color: $coldWhite;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+        h1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+
+            #the {
+                @include interFont;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #ff8181;
+            }
+            
+            #fantastic {
+                @include fantasticFeudFont;
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 500;
+                color: $lightPeriwinkle;
+                border-bottom: 1px dashed #FF4747;
+            }
+            #fantasy{
+                @include fantasyFont;
+                transition: transform 0.5s ease;
+                color: $deepPeriwinkle;
+            }
+            #fantasy:hover {
+                transform: scale(1.1); 
+            }
+            #feud {
+                @include fantasticFeudFont;
+                text-transform: uppercase;
+                color: #FF4747;
+            }
+        }
+        .catchphrase {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100%; 
+            width: 100%; 
+            #catchphrase {
+                @include interFont;
+                text-transform: uppercase;
+                font-weight: 500;
+                text-align: center;
+                width: 100%;
+                font-size: 0.8rem;
+                color: $darkGray;
+            }
+        }
+    }
+    .wrapper-body {
+        height: 50vh;
+        display: flex;
+        padding: 30px;
+        justify-content: center;
+        background-color: $coldWhite;
+        margin: 30px 0;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+
+        #ctaBtn {
+            margin-top: 20%;
+            height: 60px;
+            width: 200px;
+            background-color: #7f8eff; 
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.5s ease;
+            transform: scale(1.1); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+        #ctaBtn:hover {
+            background-color: $deepPeriwinkle;
+            outline: none;
+            transform: scale(1.2);
+            
+        }
+    }
+
+
+}
