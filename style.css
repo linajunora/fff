@@ -20,6 +20,10 @@
   background-color: #0f143d;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+.outer-wrapper.dark-mode h1 a {
+  text-decoration: none;
+  display: inline-block;
+}
 .outer-wrapper.dark-mode h1 #the {
   color: #F5F6FF;
 }
@@ -29,6 +33,9 @@
 }
 .outer-wrapper.dark-mode h1 #fantasy {
   color: #d2d7ff;
+}
+.outer-wrapper.dark-mode h1 #fantasy:hover {
+  transform: scale(1.1);
 }
 .outer-wrapper.dark-mode h1 #feud {
   color: #ff8181;
@@ -92,6 +99,16 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+.outer-wrapper .header-index h1 a #fantasy {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+.outer-wrapper .header-index h1 a:hover #fantasy {
+  text-decoration: none;
+  display: inline-block;
+  transform: scale(1.1);
 }
 .outer-wrapper .header-index h1 #the {
   font-family: "Inter", sans-serif;
@@ -224,4 +241,15 @@ footer .footer-wrapper p.copyright {
   text-transform: uppercase;
   font-size: 0.7rem;
   color: #d2d7ff;
+}
+
+footer.dark-mode {
+  background-color: #6274FF;
+}
+footer.dark-mode .footer-wrapper {
+  border: none;
+}
+footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrapper p.copyright {
+  color: #ffdddd;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
