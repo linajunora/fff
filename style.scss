@@ -9,10 +9,61 @@
 .outer-wrapper {
     padding: 20px;
     padding-top: 20px;
-    min-height: 100vh;
-    background-color: $coldGray;
+    min-height: calc(100vh - 70px);
+    background-color: $lightCoral;
     display:flex;
     flex-direction: column;
+
+
+    &.dark-mode {
+        background-color: $backgroundDark;
+        color: $coldWhite;
+
+        .header-index{
+            background-color: $backgroundDarker;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1{
+            #the {
+                color: $coldWhite;
+            }
+            #fantastic {
+                color: $lightPeriwinkle;
+                border-bottom: 1px dashed $coral;
+            }
+            #fantasy {
+                color: $lighterPeriwinkle;
+            }
+            #feud {
+                color: $coral
+            }
+        }
+        #themeToggleBtn {
+            background-color: $feudRed !important;
+            color: $coldWhite !important;
+        }
+        #themeToggleBtn:hover {
+            background-color: $coral !important;
+            outline: none;
+            transform: scale(1.2);
+        }
+        .catchphrase {
+            #catchphrase {
+                color: $lighterPeriwinkle;
+            }
+        }
+        .wrapper-body {
+            background-color: $backgroundDarker;
+            
+            #ctaBtn {
+                background-color: $feudRed;
+                color: $coldWhite;
+            }
+            #ctaBtn:hover {
+                background-color: $coral;
+            }
+        }
+    }
 
     .header-index{
         padding: 20px;
@@ -22,17 +73,35 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // border: 1px dashed red;
         border-radius: 20px;
         background-color: $coldWhite;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 
+        #themeToggleBtn {
+            margin-top: 15px;
+            background-color: $lighterPeriwinkle; 
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-size: 12px;
+            padding: 5px;
+            border: none;
+            border-radius: 25px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.5s ease;
+            transform: scale(1.1); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+        } #themeToggleBtn:hover {
+            background-color: $lightPeriwinkle;
+            outline: none;
+            transform: scale(1.2);
+        }
         h1 {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px;
+            padding: 20px;
 
             #the {
                 @include interFont;
@@ -77,23 +146,24 @@
                 text-align: center;
                 width: 100%;
                 font-size: 0.8rem;
-                color: $darkGray;
+                color: $lightPeriwinkle;
             }
         }
     }
     .wrapper-body {
-        height: 50vh;
+        height: 30vh;
         display: flex;
         padding: 30px;
         justify-content: center;
         background-color: $coldWhite;
         margin: 30px 0;
+        margin-bottom: 10px;
         border-radius: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 
 
         #ctaBtn {
-            margin-top: 20%;
+            align-self: center;
             height: 60px;
             width: 200px;
             background-color: #7f8eff; 
@@ -116,6 +186,40 @@
             
         }
     }
+}
+footer {
+    margin: 0;
+    width: 100vw;
+    height: 70px;
+    background-color: $deepPeriwinkle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    .footer-wrapper {
+        margin: 5px 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        border-top: 1px dashed $lighterPeriwinkle;
+        border-bottom: 1px dashed $lighterPeriwinkle;
 
+        h2.companyName {
+            @include interFont;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: $lighterPeriwinkle;
+            
+        }
+        p.copyright {
+            @include interFont;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: $lighterPeriwinkle;
+        }
+    }
 }
