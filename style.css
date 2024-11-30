@@ -170,7 +170,7 @@
   color: #A9B3FF;
 }
 .outer-wrapper .wrapper-body {
-  height: 30vh;
+  min-height: 30vh;
   display: flex;
   padding: 30px;
   justify-content: center;
@@ -252,4 +252,15 @@ footer.dark-mode .footer-wrapper {
 footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrapper p.copyright {
   color: #ffdddd;
   font-weight: 700;
+}
+
+.quiz-body .outer-wrapper .wrapper-body {
+  padding: 0;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz {
+  width: 100%;
+  padding: 20px;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset {
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */

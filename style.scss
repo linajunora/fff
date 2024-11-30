@@ -170,7 +170,7 @@
         }
     }
     .wrapper-body {
-        height: 30vh;
+        min-height: 30vh;
         display: flex;
         padding: 30px;
         justify-content: center;
@@ -254,4 +254,22 @@ footer.dark-mode {
             }
 
         }
+}
+
+.quiz-body {
+    .outer-wrapper{
+         .header-index{
+
+         }
+         .wrapper-body{
+            padding: 0;
+            #form-quiz {
+                width: 100%;
+                padding: 20px;
+                fieldset {
+                    padding: 10px;
+                }
+            }
+         }
+    }
 }
