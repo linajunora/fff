@@ -266,8 +266,25 @@ footer.dark-mode {
             #form-quiz {
                 width: 100%;
                 padding: 20px;
+                h2 {
+                    @include fantasyFont;
+                    color: $deepPeriwinkle;
+                    font-size: 2rem;
+                }
                 fieldset {
                     padding: 10px;
+                    h3 {
+                        @include interFont;
+                        // text-transform: uppercase;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: $darkGray;
+                    }
+                    label {
+                        @include interFont;
+                        color: $deepPeriwinkle;
+                        font-weight: 500;
+                    }
                 }
             }
          }

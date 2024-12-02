@@ -261,6 +261,31 @@ footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrappe
   width: 100%;
   padding: 20px;
 }
+.quiz-body .outer-wrapper .wrapper-body #form-quiz h2 {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 4rem;
+  color: #6274FF;
+  font-size: 2rem;
+}
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset {
   padding: 10px;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #545454;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset label {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #6274FF;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */
