@@ -78,7 +78,8 @@
   margin-top: 15px;
   background-color: #d2d7ff;
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   font-size: 12px;
   padding: 5px;
   border: none;
@@ -158,15 +159,12 @@
   width: 100%;
 }
 .outer-wrapper .header-index .catchphrase #catchphrase {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #A9B3FF;
 }
 .outer-wrapper .wrapper-body {
@@ -186,7 +184,7 @@
   width: 200px;
   background-color: #7f8eff;
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: bold;
   padding: 12px 20px;
@@ -258,8 +256,13 @@ footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrappe
   padding: 0;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 20px;
+  gap: 30px;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz h2 {
   font-family: "Jacquard 24", system-ui;
@@ -268,24 +271,57 @@ footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrappe
   font-size: 4rem;
   color: #6274FF;
   font-size: 2rem;
+  border-bottom: 1px dashed red;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset {
-  padding: 10px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background-color: #dee1fb;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.229);
+  /* Highlight checked inputs via labels */
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset h3 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
-  color: #545454;
+  font-weight: 600;
+  color: #6274FF;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset input[type=checkbox],
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset input[type=radio] {
+  position: absolute;
+  opacity: 0;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset label {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: #6274FF;
-  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #FF4747;
+  font-weight: 400;
+  width: 55%;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset label:hover {
+  background-color: #ffdddd;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset input[type=checkbox]:checked + label,
+.quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset input[type=radio]:checked + label {
+  background-color: #ffdddd; /* Highlight checked option */
+  border-color: #FF4747; /* Optional: Change border color */
+  color: #FF4747; /* Optional: Change text color */
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

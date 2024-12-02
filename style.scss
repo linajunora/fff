@@ -89,7 +89,8 @@
             margin-top: 15px;
             background-color: $lighterPeriwinkle; 
             color: white;
-            font-family: "Inter", sans-serif;
+            @include poppins;
+            font-weight: 500;
             font-size: 12px;
             padding: 5px;
             border: none;
@@ -159,12 +160,12 @@
             height: 100%; 
             width: 100%; 
             #catchphrase {
-                @include interFont;
+                @include poppins;
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 600;
                 text-align: center;
                 width: 100%;
-                font-size: 0.8rem;
+                font-size: 0.9rem;
                 color: $lightPeriwinkle;
             }
         }
@@ -187,7 +188,7 @@
             width: 200px;
             background-color: #7f8eff; 
             color: white;
-            font-family: "Inter", sans-serif;
+            @include poppins;
             font-size: 14px;
             font-weight: bold;
             padding: 12px 20px;
@@ -264,26 +265,71 @@ footer.dark-mode {
          .wrapper-body{
             padding: 0;
             #form-quiz {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
                 padding: 20px;
+                gap: 30px;
                 h2 {
                     @include fantasyFont;
                     color: $deepPeriwinkle;
                     font-size: 2rem;
+                    border-bottom: 1px dashed red;
                 }
                 fieldset {
-                    padding: 10px;
+                    width: 100%;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 20px;
+                    background-color: $lightererPeriwinkle;
+                    border: none;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.229);
                     h3 {
-                        @include interFont;
-                        // text-transform: uppercase;
+                        @include poppins;
                         font-size: 1rem;
-                        font-weight: 400;
-                        color: $darkGray;
+                        font-weight: 600;
+                        color: $deepPeriwinkle;
+                        // text-transform: uppercase;
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                    input[type="checkbox"],
+                    input[type="radio"] {
+                        position: absolute;
+                        opacity: 0;
                     }
                     label {
-                        @include interFont;
-                        color: $deepPeriwinkle;
-                        font-weight: 500;
+                        @include poppins;
+                        color: $feudRed;
+                        font-weight: 400;
+                        width: 55%;
+                        text-align: center;
+                        display: block;
+                        padding: 10px;
+                        margin: 5px 0;
+                        border: 1px solid #ccc;
+                        border-radius: 20px;
+                        background-color: #f9f9f9;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease, border-color 0.3s ease;
+                    }
+                    label:hover {
+                        background-color: $lightCoral;
+                    }
+
+                    /* Highlight checked inputs via labels */
+                    input[type="checkbox"]:checked + label,
+                    input[type="radio"]:checked + label {
+                        background-color: $lightCoral; /* Highlight checked option */
+                        border-color: $feudRed; /* Optional: Change border color */
+                        color: $feudRed; /* Optional: Change text color */
+                        font-weight: bold;
                     }
                 }
             }
