@@ -6,6 +6,21 @@
     box-sizing: border-box;
   }
 
+/* Hide all questions initially */
+.question {
+    display: none;
+}
+
+/* Show the active question */
+.question.active {
+    display: block;
+}
+
+/* Hide submit button by default */
+#submit {
+    display: none;
+}
+
 .outer-wrapper {
     padding: 20px;
     padding-top: 20px;

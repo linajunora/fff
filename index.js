@@ -21,33 +21,76 @@ themeToggleBtn.addEventListener("click", () => {
     //Save the current theme to localStorage
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 });
-//check if quiz button exist in DOM
-const ctaBtn = document.getElementById("ctaBtn");
-if (ctaBtn) {
-document.getElementById("ctaBtn").addEventListener("click", () => {
-    window.location.href = "quiz.html"; // Navigate to quiz.html
-  });
-}
+// //check if quiz button exist in DOM
+// const ctaBtn = document.getElementById("ctaBtn");
+// if (ctaBtn) {
+// document.getElementById("ctaBtn").addEventListener("click", () => {
+//     window.location.href = "quiz.html"; // Navigate to quiz.html
+//   });
+// }
 
-  //submit the quiz
-  document.querySelector("#submit").addEventListener("click", (event) => {
-    event.preventDefault();
-    let score = 0;
+//   //submit the quiz
+//   document.querySelector("#submit").addEventListener("click", (event) => {
+//     event.preventDefault();
+//     let score = 0;
 
-    const radioInputs = document.querySelectorAll("input[type='radio']:checked");
-    radioInputs.forEach(input => {
-        if (input.dataset.correct === "true") {
-            score++;
+//     const radioInputs = document.querySelectorAll("input[type='radio']:checked");
+//     radioInputs.forEach(input => {
+//         if (input.dataset.correct === "true") {
+//             score++;
+//         }
+//     });
+
+//     const checkboxInputs = document.querySelectorAll("input[type='checkbox']");
+//     const selectedCheckboxes = [...checkboxInputs].filter(input => input.checked && input.dataset.correct === "true");
+//     const correctCheckboxes = [...checkboxInputs].filter(input => input.dataset.correct === "true");
+
+//     //kollar så båda checkboxarna är checkade
+//     if (selectedCheckboxes.length === correctCheckboxes.length && correctCheckboxes.every(cb => cb.checked)){
+//         score++;
+//     }
+//     alert(`Your score: ${score}`);
+//   });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const quizForm = document.getElementById("form-quiz");
+    const questions = document.querySelectorAll(".question");
+    const nextBtn = document.getElementById("nextBtn");
+    const submitBtn = document.getElementById("submit");
+
+    let currentQuestionIndex = 0;
+
+    // Start the quiz by showing the first question
+    quizForm.style.display = "block";
+    questions[currentQuestionIndex].classList.add("active");
+    nextBtn.style.display = "block";
+
+    // Show the next question
+    nextBtn.addEventListener("click", () => {
+        const currentQuestion = questions[currentQuestionIndex];
+        const inputs = currentQuestion.querySelectorAll("input");
+
+        // Ensure an answer is selected
+        if (Array.from(inputs).some(input => input.checked)) {
+            currentQuestion.classList.remove("active");
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                questions[currentQuestionIndex].classList.add("active");
+
+                // If on the last question, hide "Next" button and show "Submit"
+                if (currentQuestionIndex === questions.length - 1) {
+                    nextBtn.style.display = "none";
+                    submitBtn.style.display = "block";
+                }
+            }
+        } else {
+            alert("Please select an answer before proceeding.");
         }
     });
 
-    const checkboxInputs = document.querySelectorAll("input[type='checkbox']");
-    const selectedCheckboxes = [...checkboxInputs].filter(input => input.checked && input.dataset.correct === "true");
-    const correctCheckboxes = [...checkboxInputs].filter(input => input.dataset.correct === "true");
-
-    //kollar så båda checkboxarna är checkade
-    if (selectedCheckboxes.length === correctCheckboxes.length && correctCheckboxes.every(cb => cb.checked)){
-        score++;
-    }
-    alert(`Your score: ${score}`);
-  });
+    // Handle the submission
+    submitBtn.addEventListener("click", () => {
+        alert("Quiz completed! Add score calculation here.");
+    });
+});
