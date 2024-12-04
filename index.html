@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FFF</title>
-    <script src="index.js" defer></script>
+    <script>
+        // Redirect to quiz page when the button is clicked
+        document.addEventListener("DOMContentLoaded", () => {
+            const ctaBtn = document.getElementById("ctaBtn");
+            ctaBtn.addEventListener("click", () => {
+                window.location.href = "quiz.html"; // Replace with the correct path if needed
+            });
+        });
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
