@@ -26,6 +26,22 @@
   --coral: #ff8181;
 }
 
+#themeToggleBtn svg {
+  fill: var(--accent-color);
+}
+
+#themeToggleBtn svg:last-child {
+  display: none;
+}
+
+.darkmode #themeToggleBtn svg:first-child {
+  display: none;
+}
+
+.darkmode #themeToggleBtn svg:last-child {
+  display: block;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -53,23 +69,6 @@ body .outer-wrapper .header-index {
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-body .outer-wrapper .header-index #themeToggleBtn {
-  margin-top: 15px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  padding: 5px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.5s ease;
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-body .outer-wrapper .header-index #themeToggleBtn:hover {
-  outline: none;
-  transform: scale(1.2);
 }
 body .outer-wrapper .header-index h1 {
   display: flex;
@@ -162,18 +161,6 @@ body .outer-wrapper .header-index #themeToggleBtn:hover {
   background-color: #A9B3FF;
   outline: none;
   transform: scale(1.2);
-}
-body .outer-wrapper .header-index #themeToggleBtn svg {
-  fill: var(--accent-color);
-}
-body .outer-wrapper .header-index #themeToggleBtn svg:last-child {
-  display: none;
-}
-body .outer-wrapper .header-index .darkmode #themeToggleBtn svg:first-child {
-  display: none;
-}
-body .outer-wrapper .header-index .darkmode #themeToggleBtn svg:last-child {
-  display: block;
 }
 body .outer-wrapper .wrapper-body {
   min-height: 30vh;
@@ -326,4 +313,26 @@ footer .footer-wrapper p.copyright {
   border-color: #FF4747; /* Optional: Change border color */
   color: #FF4747; /* Optional: Change text color */
   font-weight: bold;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div #submit, .quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div #nextBtn {
+  background-color: var(--coral);
+  color: var(--base-variant);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.5s ease;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }/*# sourceMappingURL=style.css.map */
