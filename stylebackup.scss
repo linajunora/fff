@@ -6,180 +6,198 @@
     box-sizing: border-box;
   }
 
-  :root {
-    --base-color: #ffdddd;
-    --base-variant: #F5F6FF;
-    --text-color: #545454;
-    --secondary-text: #A9B3FF;
-    --lightererperiwinkle: #dee1fb;
-    --primary-color: #6274FF;
-    --accent-color: #FF4747;
-    --coral: #ff8181;
+/* Hide all questions initially */
+.question {
+    display: none;
 }
 
-.darkmode {
-    --base-color: #0015b6;
-    --base-variant: #0f143d;
-    --text-color: #ffffff;
-    --secondary-text: #A9B3FF;
-    --lightererperiwinkle: #0f143d;
-    --primary-color: #6274FF;
-    --accent-color: #FF4747;
-    --coral:  #ff8181;
+/* Show the active question */
+.question.active {
+    display: block;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--base-color);
-    color: var(--text-color);
-    .outer-wrapper {
-        background-color: var(--base-color);
-        padding: 20px;
-        padding-top: 20px;
-        min-height: calc(100vh - 70px);
-        display:flex;
-        flex-direction: column;
+/* Hide submit button by default */
+#submit {
+    display: none;
+}
+
+.outer-wrapper {
+    padding: 20px;
+    padding-top: 20px;
+    min-height: calc(100vh - 70px);
+    background-color: $lightCoral;
+    display:flex;
+    flex-direction: column;
+
+
+    &.dark-mode {
+        background-color: $backgroundDark;
+        color: $coldWhite;
+
+        .header-index{
+            background-color: $backgroundDarker;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1{
+            a {
+                text-decoration: none;
+                display: inline-block;
+            }
+            #the {
+                color: $coldWhite;
+            }
+            #fantastic {
+                color: $lightPeriwinkle;
+                border-bottom: 1px dashed $coral;
+            }
+            #fantasy {
+                color: $lighterPeriwinkle;
+            }
+            #fantasy:hover {
+                transform: scale(1.1);
+            }
+            #feud {
+                color: $coral
+            }
+        }
+        #themeToggleBtn {
+            background-color: $feudRed !important;
+            color: $coldWhite !important;
+        }
+        #themeToggleBtn:hover {
+            background-color: $coral !important;
+            outline: none;
+            transform: scale(1.2);
+        }
+        .catchphrase {
+            #catchphrase {
+                color: $lighterPeriwinkle;
+            }
+        }
+        .wrapper-body {
+            background-color: $backgroundDarker;
+            
+            #ctaBtn {
+                background-color: $feudRed;
+                color: $coldWhite;
+            }
+            #ctaBtn:hover {
+                background-color: $coral;
+            }
+        }
         
-        .header-index {
-            background-color: var(--base-variant);
-            color: var(--text-color);
-            padding: 20px;
-            margin-top: 10px;
-            width: 100%;
-            height: 50%;
+    }
+
+    .header-index{
+        padding: 20px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: $coldWhite;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+        #themeToggleBtn {
+            margin-top: 15px;
+            background-color: $lighterPeriwinkle; 
+            color: white;
+            @include poppins;
+            font-weight: 500;
+            font-size: 12px;
+            padding: 5px;
+            border: none;
+            border-radius: 25px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.5s ease;
+            transform: scale(1.1); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+        } #themeToggleBtn:hover {
+            background-color: $lightPeriwinkle;
+            outline: none;
+            transform: scale(1.2);
+        }
+        h1 {
+            a #fantasy {
+                text-decoration: none; 
+                display: inline-block;
+                transition: transform 0.5s ease;
+            }
+            
+            a:hover #fantasy {
+                text-decoration: none; 
+                display: inline-block;
+                 transform: scale(1.1);
+            }
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-            #themeToggleBtn {
-                margin-top: 15px; 
-                @include poppins;
-                font-weight: 500;
-                font-size: 12px;
-                padding: 5px;
-                border: none;
-                border-radius: 25px; 
-                cursor: pointer;
-                transition: background-color 0.3s ease, transform 0.5s ease;
-                transform: scale(1.1); 
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-            }
-            #themeToggleBtn:hover {
-                outline: none;
-                transform: scale(1.2);
-            }
-            h1 {
-                a #fantasy {
-                    @include fantasyFont;
-                    text-decoration: none; 
-                    display: inline-block;
-                    transition: transform 0.5s ease;
-                    color: var(--primary-color)
-                }
-                a:hover #fantasy {
-                    text-decoration: none; 
-                    display: inline-block;
-                     transform: scale(1.1);
-                }
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 20px;
+            padding: 20px;
 
-                #the {
-                    @include interFont;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    font-size: 1.2rem;
-                    color: var(--coral)
-                }
-                
-                #fantastic {
-                    @include fantasticFeudFont;
-                    text-transform: uppercase;
-                    font-size: 2rem;
-                    font-weight: 500;
-                    color: var(--secondary-text);
-                    border-bottom: 1px dashed var(--accent-color);
-                }
-                #feud {
-                    @include fantasticFeudFont;
-                    text-transform: uppercase;
-                    color: var(--accent-color);
-                }
+            #the {
+                @include interFont;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #ff8181;
             }
-            .catchphrase {
-                display: flex;
-                justify-content: center; 
-                align-items: center; 
-                height: 100%; 
-                width: 100%; 
-                #catchphrase {
-                    @include poppins;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    text-align: center;
-                    width: 100%;
-                    font-size: 0.9rem;
-                    color: var(--secondary-text);
-                }
-            }
-            #themeToggleBtn {
-                margin-top: 15px;
-                background-color: $lighterPeriwinkle; 
-                color: white;
-                @include poppins;
+            
+            #fantastic {
+                @include fantasticFeudFont;
+                text-transform: uppercase;
+                font-size: 2rem;
                 font-weight: 500;
-                font-size: 12px;
-                height: 30px;
-                width: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 5px;
-                border: none;
-                border-radius: 50%; 
-                cursor: pointer;
-                transition: background-color 0.3s ease, transform 0.5s ease;
+                color: $lightPeriwinkle;
+                border-bottom: 1px dashed #FF4747;
+            }
+            #fantasy{
+                @include fantasyFont;
+                transition: transform 0.5s ease;
+                color: $deepPeriwinkle;
+            }
+            #fantasy:hover {
                 transform: scale(1.1); 
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-            } #themeToggleBtn:hover {
-                background-color: $lightPeriwinkle;
-                outline: none;
-                transform: scale(1.2);
             }
-            #themeToggleBtn svg{
-                fill: var(--accent-color);
+            #feud {
+                @include fantasticFeudFont;
+                text-transform: uppercase;
+                color: #FF4747;
             }
-            #themeToggleBtn svg:last-child {
-                display: none;
+        }
+        .catchphrase {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100%; 
+            width: 100%; 
+            #catchphrase {
+                @include poppins;
+                text-transform: uppercase;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+                font-size: 0.9rem;
+                color: $lightPeriwinkle;
             }
-            .darkmode #themeToggleBtn svg:first-child{
-                display: none;
-            }
-            .darkmode #themeToggleBtn svg:last-child {
-                display: block;
-            }
+        }
     }
     .wrapper-body {
         min-height: 30vh;
         display: flex;
         padding: 30px;
         justify-content: center;
-        background-color: var(--base-variant);
+        background-color: $coldWhite;
         margin: 30px 0;
         margin-bottom: 10px;
         border-radius: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+
+
         #ctaBtn {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             align-self: center;
             height: 60px;
             width: 200px;
@@ -187,6 +205,7 @@ body {
             color: white;
             @include poppins;
             font-size: 14px;
+            font-weight: bold;
             padding: 12px 20px;
             border: none;
             border-radius: 25px; 
@@ -203,11 +222,7 @@ body {
         }
     }
 }
-}
-
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
     margin: 0;
     width: 100vw;
     height: 70px;
@@ -216,6 +231,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .footer-wrapper {
         margin: 5px 0;
         padding: 10px;
@@ -241,6 +257,19 @@ footer {
             color: $lighterPeriwinkle;
         }
     }
+}
+
+footer.dark-mode {
+        background-color: $deepPeriwinkle;
+        .footer-wrapper {
+            border: none;
+
+            h2.companyName, p.copyright {
+                color: $lightCoral;
+                font-weight: 700;
+            }
+
+        }
 }
 
 .quiz-body {
