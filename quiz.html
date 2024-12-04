@@ -16,29 +16,30 @@
 <body class="quiz-body">
     <div class="outer-wrapper">
         <header class="header-index">
-            <h1><span id="the">The </span><span id="fantastic">Fantastic </span><a href="index.html"><span id="fantasy">Fantasy </span></a><span id="feud">Feud</span></h1>
-            <div class="catchphrase">
-                <h2 id="catchphrase">“The Ultimate Quiz for Fantasy Enthusiasts”</h2>
-            </div>
             <button id="themeToggleBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>
             </button>
+            <h1><span id="the">The </span><span id="fantastic">Fantastic </span><a href="index.html"><span id="fantasy">Fantasy </span></a><span id="feud">Feud</span></h1>
+            <div class="catchphrase">
+                <h2 id="catchphrase">“The Ultimate Quiz for Fantasy Enthusiasts”</h2>
+            </div>
         </header>
         <div class="wrapper-body">
             <!-- <form id="form-quiz" style="display: none;"> -->
                 <form id="form-quiz">
-                <div class="question">
-                <h2>Lord of the Rings</h2>
-                <fieldset id="lotr-fieldset1">
+                    <div id="fieldset-wrapper">
+                <!-- <div class="question"> -->
+                    <fieldset id="lotr-fieldset1">
+                    <h2>Lord of the Rings</h2>
                     <h3>Sauron forged all of the Rings of Power</h3>
                     <input type="radio" id="lotr1true" name="lotr1" value="true" data-correct="false">
                     <label for="lotr1true">True</label>
                     <input type="radio" id="lotr1false" name="lotr1" value="false" data-correct="true">
                     <label for="lotr1false">False</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div> -->
+                <!-- <div class="question"> -->
                 <fieldset id="lotr-fieldset2">
                     <h3>Which two creatures are considered the most ancient beings in Middle-earth?</h3>
                     <input type="checkbox" id="gandalf" name="q3-option" value="Gandalf" data-correct="false">
@@ -50,8 +51,8 @@
                     <input type="checkbox" id="gollum" name="q3-option" value="Gollum" data-correct="false">
                     <label for="gollum">Gollum</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div> -->
+                <!-- <div class="question"> -->
                 <fieldset id="lotr-fieldset3">
                     <h3>What is the name of the inn where Frodo and his companions meet Aragorn for the first time?</h3>
                     <input type="radio" id="prancing-pony" name="inn" value="prancing-pony" data-correct="true">
@@ -63,8 +64,8 @@
                     <input type="radio" id="dancing-ardennier" name="inn" value="dancing-ardennier" data-correct="false">
                     <label for="dancing-ardennier">The Dancing Ardennier</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="lotr-fieldset4">
                     <h3>Who is the steward of Gondor during the events of “The Lord of the Rings”?</h3>
                     <input type="radio" id="boromir" name="steward" value="boromir" data-correct="false">
@@ -76,10 +77,10 @@
                     <input type="radio" id="théoden" name="steward" value="théoden" data-correct="false">
                     <label for="théoden">Théoden</label>
                 </fieldset>
-                </div>
-                <div class="question">
-                <h2>Harry Potter</h2>
-                <fieldset id="hp-fieldset1">
+                <!-- </div>
+                <div class="question"> -->
+                    <fieldset id="hp-fieldset1">
+                    <h2>Harry Potter</h2>
                     <h3>What is the name of the potion that grants good luck?</h3>
                     <input type="radio" id="amortentia" name="potion" value="amortentia" data-correct="false">
                     <label for="amortentia">Amortentia</label>
@@ -90,8 +91,8 @@
                     <input type="radio" id="polyjuice" name="potion" value="polyjuice" data-correct="false">
                     <label for="polyjuice">Polyjuice Potion</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="hp-fieldset2">
                     <h3>The symbol of the Deathly Hallows was created by Gellert Grindelwald.</h3>
                     <input type="radio" id="hp1true" name="hp1" value="true" data-correct="false">
@@ -99,8 +100,8 @@
                     <input type="radio" id="hp1false" name="hp1" value="false" data-correct="correct">
                     <label for="hp1false">False</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="hp-fieldset3">
                     <h3>What is the incantation for conjuring the Dark Mark?</h3>
                     <input type="radio" id="avada" name="darkmark" value="avada" data-correct="false">
@@ -112,8 +113,8 @@
                     <input type="radio" id="lumos" name="darkmark" value="lumos" data-correct="false">
                     <label for="lumos">Lumos</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="hp-fieldset4">
                     <h3>Which two people became the secret keepers for the Potters during Voldemorts hunt for Harry?</h3>
                     <input type="checkbox" id="sirius" name="hpq-option" value="sirius" data-correct="true">
@@ -125,10 +126,10 @@
                     <input type="checkbox" id="remus" name="hpq-option" value="remus" data-correct="false">
                     <label for="remus">Remus Lupin</label>
                 </fieldset>
-                </div>
-                <div class="question">
-                <h2>Kingkiller Chronicles</h2>
-                <fieldset id="kc-fieldset1">
+                <!-- </div>
+                <div class="question"> -->
+                    <fieldset id="kc-fieldset1">
+                    <h2>Kingkiller Chronicles</h2>
                     <h3>What is the name of the university master who is a Namer and teaches sympathy?</h3>
                     <input type="radio" id="elodin" name="sympathy" value="elodin" data-correct="true">
                     <label for="elodin">Elodin</label>
@@ -139,8 +140,8 @@
                     <input type="radio" id="lorren" name="sympathy" value="lorren" data-correct="false">
                     <label for="lorren">Lorren</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="kc-fieldset2">
                     <h3>Kvothe's lute has six strings</h3>
                     <input type="radio" id="kctrue" name="kc1" value="true" data-correct="false">
@@ -148,8 +149,8 @@
                     <input type="radio" id="kcfalse" name="kc1" value="false" data-correct="correct">
                     <label for="kcfalse">False</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="kc-fieldset3">
                     <h3>What is the currency primarily used at the University?</h3>
                     <input type="radio" id="drabs" name="currency" value="drabs" data-correct="false">
@@ -161,10 +162,10 @@
                     <input type="radio" id="crowns" name="currency" value="crowns" data-correct="false">
                     <label for="crowns">Crowns</label>
                 </fieldset>
-                </div>
-                <div class="question">
-                <h2>A court of Thorns and Roses</h2>
-                <fieldset id="acotar-fieldset1">
+                <!-- </div>
+                <div class="question"> -->
+                    <fieldset id="acotar-fieldset1">
+                    <h2>A court of Thorns and Roses</h2>
                     <h3>What is the name of Rhysands inner circle spy?</h3>
                     <input type="radio" id="cassian" name="spy" value="cassian" data-correct="false">
                     <label for="cassian">Cassian</label>
@@ -175,8 +176,8 @@
                     <input type="radio" id="mor" name="spy" value="mor" data-correct="false">
                     <label for="mor">Mor</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="acotar-fieldset2">
                     <h3>Which two Night Court members fought during the war with Hybern?</h3>
                     <input type="checkbox" id="cassian2" name="acotarq-option" value="cassian" data-correct="true">
@@ -188,8 +189,8 @@
                     <input type="checkbox" id="lucien2" name="acotarq-option" value="lucien" data-correct="false">
                     <label for="lucien2">Lucien</label>
                 </fieldset>
-                </div>
-                <div class="question">
+                <!-- </div>
+                <div class="question"> -->
                 <fieldset id="acotar-fieldset3">
                     <h3>The suriel enjoys gossip</h3>
                     <input type="radio" id="acotartrue" name="acotar1" value="true" data-correct="true">
@@ -197,9 +198,12 @@
                     <input type="radio" id="acotarfalse" name="acotar1" value="false" data-correct="false">
                     <label for="acotarfalse">False</label>
                 </fieldset>
+            </div>
+                <!-- </div> -->
+                 <div class="button-div">
+                    <button id="submit" type="button">Submit</button>
+                    <button type="button" id="nextBtn">Next</button>
                 </div>
-                <button id="submit" type="button">Submit</button>
-                <button type="button" id="nextBtn">Next</button>
             </form>
         </div>
     </div>   

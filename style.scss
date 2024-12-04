@@ -28,6 +28,19 @@
     --coral:  #ff8181;
 }
 
+#themeToggleBtn svg{
+    fill: var(--accent-color);
+}
+#themeToggleBtn svg:last-child {
+    display: none;
+}
+.darkmode #themeToggleBtn svg:first-child{
+    display: none;
+}
+.darkmode #themeToggleBtn svg:last-child {
+    display: block;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -54,23 +67,6 @@ body {
             align-items: center;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-            #themeToggleBtn {
-                margin-top: 15px; 
-                @include poppins;
-                font-weight: 500;
-                font-size: 12px;
-                padding: 5px;
-                border: none;
-                border-radius: 25px; 
-                cursor: pointer;
-                transition: background-color 0.3s ease, transform 0.5s ease;
-                transform: scale(1.1); 
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-            }
-            #themeToggleBtn:hover {
-                outline: none;
-                transform: scale(1.2);
-            }
             h1 {
                 a #fantasy {
                     @include fantasyFont;
@@ -152,18 +148,8 @@ body {
                 outline: none;
                 transform: scale(1.2);
             }
-            #themeToggleBtn svg{
-                fill: var(--accent-color);
-            }
-            #themeToggleBtn svg:last-child {
-                display: none;
-            }
-            .darkmode #themeToggleBtn svg:first-child{
-                display: none;
-            }
-            .darkmode #themeToggleBtn svg:last-child {
-                display: block;
-            }
+            
+
     }
     .wrapper-body {
         min-height: 30vh;
@@ -261,7 +247,7 @@ footer {
                 h2 {
                     @include fantasyFont;
                     color: $deepPeriwinkle;
-                    font-size: 2rem;
+                    font-size: 1.7rem;
                     border-bottom: 1px dashed red;
                 }
                 fieldset {
@@ -293,8 +279,9 @@ footer {
                     label {
                         @include poppins;
                         color: $feudRed;
+                        font-size: 0.8rem;
                         font-weight: 400;
-                        width: 55%;
+                        width: 65%;
                         text-align: center;
                         display: block;
                         padding: 10px;
@@ -318,7 +305,35 @@ footer {
                         font-weight: bold;
                     }
                 }
+                .button-div {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    
+                    #submit, #nextBtn {
+                        background-color: var(--coral); 
+                        color: var(--base-variant);
+                        @include poppins;
+                        font-weight: 500;
+                        font-size: 12px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px 10px;
+                        border: none;
+                        border-radius: 15px; 
+                        cursor: pointer;
+                        transition: background-color 0.3s ease, transform 0.5s ease;
+                        transform: scale(1.1); 
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+                    }
+                    #submit {
+                        display: none;
+                    }
+                }
             }
          }
     }
 }
+
+
