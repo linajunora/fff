@@ -4,47 +4,81 @@
   box-sizing: border-box;
 }
 
-:root {
-  --base-color: #ffdddd;
-  --base-variant: #F5F6FF;
-  --text-color: #545454;
-  --secondary-text: #A9B3FF;
-  --lightererperiwinkle: #dee1fb;
-  --primary-color: #6274FF;
-  --accent-color: #FF4747;
-  --coral: #ff8181;
+/* Hide all questions initially */
+.question {
+  display: none;
 }
 
-.darkmode {
-  --base-color: #0015b6;
-  --base-variant: #0f143d;
-  --text-color: #ffffff;
-  --secondary-text: #A9B3FF;
-  --lightererperiwinkle: #0f143d;
-  --primary-color: #6274FF;
-  --accent-color: #FF4747;
-  --coral: #ff8181;
+/* Show the active question */
+.question.active {
+  display: block;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--base-color);
-  color: var(--text-color);
+/* Hide submit button by default */
+#submit {
+  display: none;
 }
-body .outer-wrapper {
-  background-color: var(--base-color);
+
+.outer-wrapper {
   padding: 20px;
   padding-top: 20px;
   min-height: calc(100vh - 70px);
+  background-color: #ffdddd;
   display: flex;
   flex-direction: column;
 }
-body .outer-wrapper .header-index {
-  background-color: var(--base-variant);
-  color: var(--text-color);
+.outer-wrapper.dark-mode {
+  background-color: #0015b6;
+  color: #F5F6FF;
+}
+.outer-wrapper.dark-mode .header-index {
+  background-color: #0f143d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.outer-wrapper.dark-mode h1 a {
+  text-decoration: none;
+  display: inline-block;
+}
+.outer-wrapper.dark-mode h1 #the {
+  color: #F5F6FF;
+}
+.outer-wrapper.dark-mode h1 #fantastic {
+  color: #A9B3FF;
+  border-bottom: 1px dashed #ff8181;
+}
+.outer-wrapper.dark-mode h1 #fantasy {
+  color: #d2d7ff;
+}
+.outer-wrapper.dark-mode h1 #fantasy:hover {
+  transform: scale(1.1);
+}
+.outer-wrapper.dark-mode h1 #feud {
+  color: #ff8181;
+}
+.outer-wrapper.dark-mode #themeToggleBtn {
+  background-color: #FF4747 !important;
+  color: #F5F6FF !important;
+}
+.outer-wrapper.dark-mode #themeToggleBtn:hover {
+  background-color: #ff8181 !important;
+  outline: none;
+  transform: scale(1.2);
+}
+.outer-wrapper.dark-mode .catchphrase #catchphrase {
+  color: #d2d7ff;
+}
+.outer-wrapper.dark-mode .wrapper-body {
+  background-color: #0f143d;
+}
+.outer-wrapper.dark-mode .wrapper-body #ctaBtn {
+  background-color: #FF4747;
+  color: #F5F6FF;
+}
+.outer-wrapper.dark-mode .wrapper-body #ctaBtn:hover {
+  background-color: #ff8181;
+}
+.outer-wrapper .header-index {
   padding: 20px;
-  margin-top: 10px;
   width: 100%;
   height: 50%;
   display: flex;
@@ -52,10 +86,13 @@ body .outer-wrapper .header-index {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  background-color: #F5F6FF;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
-body .outer-wrapper .header-index #themeToggleBtn {
+.outer-wrapper .header-index #themeToggleBtn {
   margin-top: 15px;
+  background-color: #d2d7ff;
+  color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -67,33 +104,29 @@ body .outer-wrapper .header-index #themeToggleBtn {
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
-body .outer-wrapper .header-index #themeToggleBtn:hover {
+.outer-wrapper .header-index #themeToggleBtn:hover {
+  background-color: #A9B3FF;
   outline: none;
   transform: scale(1.2);
 }
-body .outer-wrapper .header-index h1 {
+.outer-wrapper .header-index h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
-body .outer-wrapper .header-index h1 a #fantasy {
-  font-family: "Jacquard 24", system-ui;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 4rem;
+.outer-wrapper .header-index h1 a #fantasy {
   text-decoration: none;
   display: inline-block;
   transition: transform 0.5s ease;
-  color: var(--primary-color);
 }
-body .outer-wrapper .header-index h1 a:hover #fantasy {
+.outer-wrapper .header-index h1 a:hover #fantasy {
   text-decoration: none;
   display: inline-block;
   transform: scale(1.1);
 }
-body .outer-wrapper .header-index h1 #the {
+.outer-wrapper .header-index h1 #the {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -101,9 +134,9 @@ body .outer-wrapper .header-index h1 #the {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--coral);
+  color: #ff8181;
 }
-body .outer-wrapper .header-index h1 #fantastic {
+.outer-wrapper .header-index h1 #fantastic {
   font-family: "Squada One", sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -111,86 +144,56 @@ body .outer-wrapper .header-index h1 #fantastic {
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 500;
-  color: var(--secondary-text);
-  border-bottom: 1px dashed var(--accent-color);
+  color: #A9B3FF;
+  border-bottom: 1px dashed #FF4747;
 }
-body .outer-wrapper .header-index h1 #feud {
+.outer-wrapper .header-index h1 #fantasy {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 4rem;
+  transition: transform 0.5s ease;
+  color: #6274FF;
+}
+.outer-wrapper .header-index h1 #fantasy:hover {
+  transform: scale(1.1);
+}
+.outer-wrapper .header-index h1 #feud {
   font-family: "Squada One", sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 2rem;
   text-transform: uppercase;
-  color: var(--accent-color);
+  color: #FF4747;
 }
-body .outer-wrapper .header-index .catchphrase {
+.outer-wrapper .header-index .catchphrase {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
-body .outer-wrapper .header-index .catchphrase #catchphrase {
+.outer-wrapper .header-index .catchphrase #catchphrase {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
   width: 100%;
   font-size: 0.9rem;
-  color: var(--secondary-text);
+  color: #A9B3FF;
 }
-body .outer-wrapper .header-index #themeToggleBtn {
-  margin-top: 15px;
-  background-color: #d2d7ff;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.5s ease;
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-body .outer-wrapper .header-index #themeToggleBtn:hover {
-  background-color: #A9B3FF;
-  outline: none;
-  transform: scale(1.2);
-}
-body .outer-wrapper .header-index #themeToggleBtn svg {
-  fill: var(--accent-color);
-}
-body .outer-wrapper .header-index #themeToggleBtn svg:last-child {
-  display: none;
-}
-body .outer-wrapper .header-index .darkmode #themeToggleBtn svg:first-child {
-  display: none;
-}
-body .outer-wrapper .header-index .darkmode #themeToggleBtn svg:last-child {
-  display: block;
-}
-body .outer-wrapper .wrapper-body {
+.outer-wrapper .wrapper-body {
   min-height: 30vh;
   display: flex;
   padding: 30px;
   justify-content: center;
-  background-color: var(--base-variant);
+  background-color: #F5F6FF;
   margin: 30px 0;
   margin-bottom: 10px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
-body .outer-wrapper .wrapper-body #ctaBtn {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.outer-wrapper .wrapper-body #ctaBtn {
   align-self: center;
   height: 60px;
   width: 200px;
@@ -198,6 +201,7 @@ body .outer-wrapper .wrapper-body #ctaBtn {
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
+  font-weight: bold;
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
@@ -206,15 +210,13 @@ body .outer-wrapper .wrapper-body #ctaBtn {
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
-body .outer-wrapper .wrapper-body #ctaBtn:hover {
+.outer-wrapper .wrapper-body #ctaBtn:hover {
   background-color: #6274FF;
   outline: none;
   transform: scale(1.2);
 }
 
 footer {
-  background-color: var(--primary-color);
-  color: var(--text-color);
   margin: 0;
   width: 100vw;
   height: 70px;
@@ -252,6 +254,17 @@ footer .footer-wrapper p.copyright {
   text-transform: uppercase;
   font-size: 0.7rem;
   color: #d2d7ff;
+}
+
+footer.dark-mode {
+  background-color: #6274FF;
+}
+footer.dark-mode .footer-wrapper {
+  border: none;
+}
+footer.dark-mode .footer-wrapper h2.companyName, footer.dark-mode .footer-wrapper p.copyright {
+  color: #ffdddd;
+  font-weight: 700;
 }
 
 .quiz-body .outer-wrapper .wrapper-body {
@@ -326,4 +339,4 @@ footer .footer-wrapper p.copyright {
   border-color: #FF4747; /* Optional: Change border color */
   color: #FF4747; /* Optional: Change text color */
   font-weight: bold;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=stylebackup.css.map */
