@@ -22,12 +22,12 @@ themeToggleBtn.addEventListener("click", () => {
 //quiz
 
 const fieldsets = Array.from(document.querySelectorAll('form fieldset'));
-console.log(fieldsets)
 const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submit');
 const form = document.getElementById('form-quiz');
 const wrapper = document.getElementById('fieldset-wrapper');
 
+//show one fieldset at a time
 let currentIndex = 0;
 
 const newFieldset = () => {
@@ -39,12 +39,35 @@ const newFieldset = () => {
     });
     wrapper.appendChild(fieldsets[currentIndex]);
 }
+//save answers
+const answers = [];
+const savedAnswers = () => {
+    const currentQuestion = fieldsets[currentIndex];
+    const checkedInputs = currentQuestion.querySelectorAll('input:checked');
+
+    checkedInputs.forEach(input => {
+        answers.push(input.getAttribute('data-correct') === "true");
+    });
+};
 
 nextBtn.addEventListener('click', () => {
+    savedAnswers();
     if (currentIndex < fieldsets.length -1){
         currentIndex++;
         newFieldset();
     }
+    // show submit on last question
+    if (currentIndex === fieldsets.length - 1){
+        submitBtn.style.display = "block";
+        nextBtn.style.display = "none";
+    }
 });
-
 newFieldset();
+
+//submit and show result
+
+submitBtn.addEventListener("click", () => {
+    savedAnswers();
+    const totalScore = answers.filter(isCorrect => isCorrect).length;
+    console.log("Total Score:", totalScore);
+});

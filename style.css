@@ -259,7 +259,7 @@ footer .footer-wrapper p.copyright {
   font-style: normal;
   font-size: 4rem;
   color: #6274FF;
-  font-size: 2rem;
+  font-size: 1.7rem;
   border-bottom: 1px dashed red;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset {
@@ -292,8 +292,9 @@ footer .footer-wrapper p.copyright {
 .quiz-body .outer-wrapper .wrapper-body #form-quiz fieldset label {
   font-family: "Poppins", sans-serif;
   color: #FF4747;
+  font-size: 0.8rem;
   font-weight: 400;
-  width: 55%;
+  width: 65%;
   text-align: center;
   display: block;
   padding: 10px;
@@ -317,7 +318,7 @@ footer .footer-wrapper p.copyright {
 .quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div #submit, .quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div #nextBtn {
   background-color: var(--coral);
@@ -335,4 +336,7 @@ footer .footer-wrapper p.copyright {
   transition: background-color 0.3s ease, transform 0.5s ease;
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.quiz-body .outer-wrapper .wrapper-body #form-quiz .button-div #submit {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

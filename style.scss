@@ -247,7 +247,7 @@ footer {
                 h2 {
                     @include fantasyFont;
                     color: $deepPeriwinkle;
-                    font-size: 2rem;
+                    font-size: 1.7rem;
                     border-bottom: 1px dashed red;
                 }
                 fieldset {
@@ -279,8 +279,9 @@ footer {
                     label {
                         @include poppins;
                         color: $feudRed;
+                        font-size: 0.8rem;
                         font-weight: 400;
-                        width: 55%;
+                        width: 65%;
                         text-align: center;
                         display: block;
                         padding: 10px;
@@ -307,7 +308,7 @@ footer {
                 .button-div {
                     width: 100%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
                     
                     #submit, #nextBtn {
                         background-color: var(--coral); 
@@ -325,6 +326,9 @@ footer {
                         transition: background-color 0.3s ease, transform 0.5s ease;
                         transform: scale(1.1); 
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+                    }
+                    #submit {
+                        display: none;
                     }
                 }
             }
