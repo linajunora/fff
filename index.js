@@ -26,12 +26,14 @@ const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submit');
 const form = document.getElementById('form-quiz');
 const wrapper = document.getElementById('fieldset-wrapper');
+const ulResults = document.getElementById('results');
 
 //show one fieldset at a time
 let currentIndex = 0;
 
 const newFieldset = () => {
     wrapper.innerHTML = '';
+    ulResults.style.display = "none";
     fieldsets.forEach((fieldset) => {
         if (form.contains(fieldset)) {
             form.removeChild(fieldset);
@@ -64,10 +66,35 @@ nextBtn.addEventListener('click', () => {
 });
 newFieldset();
 
-//submit and show result
+//submit and show results
 
 submitBtn.addEventListener("click", () => {
     savedAnswers();
     const totalScore = answers.filter(isCorrect => isCorrect).length;
     console.log("Total Score:", totalScore);
+
+    //remove fieldset from view
+    wrapper.innerHTML = "";
+    submitBtn.style.display = "none";
+    ulResults.style.display= "block";
+
+    fieldsets.forEach((fieldset) => {
+        let liQuestion = document.createElement('li');
+        
+        const questionh3 = fieldset.querySelector('h3').textContent;
+        liQuestion.textContent = questionh3;
+        ulResults.appendChild(liQuestion);
+
+        const rightAnswer = fieldset.querySelectorAll('input[data-correct="true"]');
+        rightAnswer.forEach(answer => {
+            const label = fieldset.querySelector(`label[for=${value}"]`);
+            console.log(label);
+            if (label){
+                let liRightAnswer = document.createElement('li');
+                liRightAnswer.textContent = `Correct Answer: ${label.textContent}`;
+                console.log(liRightAnswer);
+                ulResults.appendChild(liRightAnswer);
+            }
+        });
+    });
 });
