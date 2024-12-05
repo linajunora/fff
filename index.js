@@ -51,8 +51,27 @@ const savedAnswers = () => {
         answers.push(input.getAttribute('data-correct') === "true");
     });
 };
+//checkboxes limit 2
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', () => {
+        const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        if (checkedBoxes.length > 2){
+            checkbox.checked = false;
+            alert("You can only select two options");
+        }
+    });
+})
 
 nextBtn.addEventListener('click', () => {
+    const currentFieldset = fieldsets[currentIndex];
+    const isAnyChecked = currentFieldset.querySelector('input:checked') !==null;
+
+    if (!isAnyChecked){
+        return;
+    }
     savedAnswers();
     if (currentIndex < fieldsets.length -1){
         currentIndex++;
@@ -73,27 +92,43 @@ submitBtn.addEventListener("click", () => {
     const totalScore = answers.filter(isCorrect => isCorrect).length;
     console.log("Total Score:", totalScore);
 
-    //remove fieldset from view
+    // Remove fieldsets from view
     wrapper.innerHTML = "";
     submitBtn.style.display = "none";
-    ulResults.style.display= "block";
+    ulResults.style.display = "block";
 
     fieldsets.forEach((fieldset) => {
         let liQuestion = document.createElement('li');
-        
         const questionh3 = fieldset.querySelector('h3').textContent;
-        liQuestion.textContent = questionh3;
+        liQuestion.textContent = `Question: ${questionh3}`;
         ulResults.appendChild(liQuestion);
 
-        const rightAnswer = fieldset.querySelectorAll('input[data-correct="true"]');
-        rightAnswer.forEach(answer => {
-            const label = fieldset.querySelector(`label[for=${value}"]`);
-            console.log(label);
-            if (label){
-                let liRightAnswer = document.createElement('li');
-                liRightAnswer.textContent = `Correct Answer: ${label.textContent}`;
-                console.log(liRightAnswer);
-                ulResults.appendChild(liRightAnswer);
+        // Loop inputs
+        const inputs = fieldset.querySelectorAll('input');
+        inputs.forEach(input => {
+            const label = fieldset.querySelector(`label[for="${input.id}"]`);
+            if (label) {
+                let liAnswer = document.createElement('li');
+                liAnswer.textContent = label.textContent;
+                if (input.checked) {
+                    if (input.getAttribute('data-correct') === "true") {
+                        liAnswer.style.color = "#00b451";
+                    } else {
+                        liAnswer.style.color = "#FF4747";
+                    }
+                }
+                ulResults.appendChild(liAnswer);
+            }
+        });
+
+        const correctAnswers = fieldset.querySelectorAll('input[data-correct="true"]');
+        correctAnswers.forEach(correctInput => {
+            const correctLabel = fieldset.querySelector(`label[for="${correctInput.id}"]`);
+            if (correctLabel) {
+                let liCorrectAnswer = document.createElement('li');
+                liCorrectAnswer.textContent = `Correct Answer: ${correctLabel.textContent}`;
+                // liCorrectAnswer.style.color = "green"; 
+                ulResults.appendChild(liCorrectAnswer);
             }
         });
     });
