@@ -73,6 +73,20 @@ nextBtn.addEventListener('click', () => {
         return;
     }
     savedAnswers();
+
+    //check if two options are selected
+    const dataCorrectOptions = currentFieldset.querySelectorAll('input[data-correct="true"]');
+    const checkedOptions = currentFieldset.querySelectorAll('input:checked');
+
+    if (dataCorrectOptions.length === 2) {
+        if (checkedOptions.length !==2){
+
+            alert('pick two options');
+            return;
+        }
+    }
+
+    //check if its not the last one
     if (currentIndex < fieldsets.length -1){
         currentIndex++;
         newFieldset();
@@ -91,11 +105,28 @@ submitBtn.addEventListener("click", () => {
     savedAnswers();
     const totalScore = answers.filter(isCorrect => isCorrect).length;
     console.log("Total Score:", totalScore);
+    let scoreh4 = document.createElement('h4');
+    scoreh4.textContent = `Score: ${totalScore}/17`;
 
     // Remove fieldsets from view
     wrapper.innerHTML = "";
     submitBtn.style.display = "none";
+    wrapper.appendChild(scoreh4);
     ulResults.style.display = "block";
+
+    //grade result
+    const maxScore = 17
+    let h4Grade = document.createElement('h4');
+    if (totalScore < 0.5 * maxScore) {
+        h4Grade.textContent = "You shall not pass"
+        wrapper.appendChild(h4Grade);
+    } else if (totalScore >= 0.5 * maxScore && totalScore <= 0.75 * maxScore) {
+        h4Grade.textContent = "You shall pass"
+        wrapper.appendChild(h4Grade);
+    } else if (totalScore > 0.75 * maxScore) { 
+        h4Grade.textContent = "You kicked the balrogs butt back into oblivion AND lvld up"
+        wrapper.appendChild(h4Grade);
+    }
 
     fieldsets.forEach((fieldset) => {
         let liQuestion = document.createElement('li');
@@ -127,7 +158,6 @@ submitBtn.addEventListener("click", () => {
             if (correctLabel) {
                 let liCorrectAnswer = document.createElement('li');
                 liCorrectAnswer.textContent = `Correct Answer: ${correctLabel.textContent}`;
-                // liCorrectAnswer.style.color = "green"; 
                 ulResults.appendChild(liCorrectAnswer);
             }
         });
