@@ -15,6 +15,9 @@
     --primary-color: #6274FF;
     --accent-color: #FF4747;
     --coral: #ff8181;
+    --formbackground: #dee1fb;
+    --h2h3form: #6274FF;
+    --textresult: #545454;
 }
 
 .darkmode {
@@ -26,6 +29,9 @@
     --primary-color: #6274FF;
     --accent-color: #FF4747;
     --coral:  #ff8181;
+    --formbackground: #3e49ba;
+    --h2h3form: #dee1fb;
+    --textresult: #dee1fb;
 }
 
 #themeToggleBtn svg{
@@ -41,6 +47,23 @@
     display: block;
 }
 
+//appended stuffs
+#fieldset-wrapper {
+    h4 {
+        @include interFont;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+#results {
+    list-style-type: none;
+    li {
+        text-decoration: none;
+        @include interFont;
+        color: var(--textresult);
+    }
+}
+//nested stuff
 body {
     margin: 0;
     padding: 0;
@@ -246,7 +269,7 @@ footer {
                 gap: 30px;
                 h2 {
                     @include fantasyFont;
-                    color: $deepPeriwinkle;
+                    color: var(--h2h3form);
                     font-size: 1.7rem;
                     border-bottom: 1px dashed red;
                 }
@@ -259,14 +282,14 @@ footer {
                     align-items: center;
                     gap: 10px;
                     border-radius: 20px;
-                    background-color: $lightererPeriwinkle;
+                    background-color: var(--formbackground);
                     border: none;
                     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.229);
                     h3 {
                         @include poppins;
                         font-size: 1rem;
                         font-weight: 600;
-                        color: $deepPeriwinkle;
+                        color: var(--h2h3form);
                         // text-transform: uppercase;
                         text-align: center;
                         margin-bottom: 30px;
