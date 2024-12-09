@@ -49,20 +49,53 @@
 
 //appended stuffs
 #fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     h4 {
         @include interFont;
         font-weight: 500;
         text-transform: uppercase;
+        
+        &:first-of-type {
+        @include fantasticFeudFont;
+        text-transform: uppercase;
+        color: $feudRed;
+        font-size: 1.7rem;
+        }
+        &:last-of-type {
+            font-weight: 600;
+            color: $lightPeriwinkle;
+        }
+
     }
 }
 #results {
     list-style-type: none;
+    padding: 20px;
+    
     li {
         text-decoration: none;
         @include interFont;
         color: var(--textresult);
+        margin-bottom: 5px;
+        line-height: 1.6;
     }
 }
+#results li .question-highlight {
+    font-weight: bold;
+    color: var(--h2h3form);
+
+}
+.button-div {
+    width: 270px - 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 //nested stuff
 body {
     margin: 0;
@@ -76,13 +109,15 @@ body {
         min-height: calc(100vh - 70px);
         display:flex;
         flex-direction: column;
+        align-items: center;
+        width: 100%;
         
         .header-index {
             background-color: var(--base-variant);
             color: var(--text-color);
             padding: 20px;
             margin-top: 10px;
-            width: 100%;
+            max-width: 400px;
             height: 50%;
             display: flex;
             flex-direction: column;
@@ -175,9 +210,13 @@ body {
 
     }
     .wrapper-body {
+        width:100%;
         min-height: 30vh;
         display: flex;
+
         padding: 30px;
+        min-width: 335px;
+        max-width: 400px;
         justify-content: center;
         background-color: var(--base-variant);
         margin: 30px 0;
@@ -319,12 +358,12 @@ footer {
                         background-color: $lightCoral;
                     }
 
-                    /* Highlight checked inputs via labels */
+                    
                     input[type="checkbox"]:checked + label,
                     input[type="radio"]:checked + label {
-                        background-color: $lightCoral; /* Highlight checked option */
-                        border-color: $feudRed; /* Optional: Change border color */
-                        color: $feudRed; /* Optional: Change text color */
+                        background-color: $lightCoral; 
+                        border-color: $feudRed; 
+                        color: $feudRed; 
                         font-weight: bold;
                     }
                 }

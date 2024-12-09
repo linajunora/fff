@@ -22,3 +22,11 @@
 @mixin poppins(){
     font-family: "Poppins", sans-serif;
 }
+
+//desktop
+
+@mixin desktop {
+    @media (width > 1130px){
+        @content;
+    }
+}
