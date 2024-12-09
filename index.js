@@ -131,7 +131,8 @@ submitBtn.addEventListener("click", () => {
     fieldsets.forEach((fieldset) => {
         let liQuestion = document.createElement('li');
         const questionh3 = fieldset.querySelector('h3').textContent;
-        liQuestion.textContent = `Question: ${questionh3}`;
+        liQuestion.textContent = `${questionh3}`;
+        liQuestion.innerHTML = `<span class="question-highlight">${questionh3}</span>`;
         ulResults.appendChild(liQuestion);
 
         // Loop inputs
@@ -143,7 +144,7 @@ submitBtn.addEventListener("click", () => {
                 liAnswer.textContent = label.textContent;
                 if (input.checked) {
                     if (input.getAttribute('data-correct') === "true") {
-                        liAnswer.style.color = "#00b451";
+                        liAnswer.style.color = "#6274FF";
                     } else {
                         liAnswer.style.color = "#FF4747";
                     }
